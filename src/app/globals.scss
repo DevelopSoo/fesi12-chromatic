@@ -1,0 +1,9 @@
+// src/app/globals.scss
+
+$base-padding: 10px;
+
+.box {
+  width: 100px * 2;
+  padding: $base-padding + 5px;
+  background-color: lightgray;
+}

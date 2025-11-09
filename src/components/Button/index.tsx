@@ -1,7 +1,22 @@
 // src/components/Button/index.tsx
-export default function Button({ children }: { children: React.ReactNode }) {
+
+"use client";
+
+export function Button({
+  children,
+  onClick,
+  disabled,
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+  disabled?: boolean;
+}) {
   return (
-    <button className="cursor-pointer rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+    <button
+      className="cursor-pointer rounded-md bg-blue-400 px-4 py-2 text-white"
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

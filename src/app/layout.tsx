@@ -1,7 +1,11 @@
 // src/app/layout.tsx
 
-import { AuthProvider } from "@/contexts/AuthContext";
+import QueryProvider from "@/providers/QueryProvider";
 import "./globals.css";
+import { initMocks } from "@/mocks";
+import { MSWComponent } from "@/providers/MSWComponent";
+
+initMocks();
 
 export default function RootLayout({
   children,
@@ -11,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AuthProvider>{children}</AuthProvider>
+        <MSWComponent>
+          <QueryProvider>{children}</QueryProvider>
+        </MSWComponent>
       </body>
     </html>
   );
